@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { siteConfig } from '@/data/site';
 import styles from './FloatingContact.module.css';
 
 export default function FloatingContact() {
@@ -8,7 +9,7 @@ export default function FloatingContact() {
 
   return (
     <a
-      href="https://wa.me/966500000000"
+      href={siteConfig.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.floatBtn}

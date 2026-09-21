@@ -77,7 +77,7 @@ export function YallaLogo({
           }`}
           style={{ color: taglineColor }}
         >
-          {isArabic ? 'اكتشف المزيد. اصنع ذكريات لا تُنسى.' : 'EXPLORE MORE. CREATE MEMORIES.'}
+          {isArabic ? 'يلا · تجوّل · كرر' : 'YALLA. WANDER. REPEAT.'}
         </span>
       )}
     </div>

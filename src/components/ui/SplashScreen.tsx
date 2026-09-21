@@ -235,7 +235,7 @@ export function SplashScreen() {
               }
               transition={{ duration: 0.6, ease: 'easeOut', delay: phase === 'presence' ? 0.15 : 0 }}
             >
-              {isArabic ? 'اكتشف المزيد · اصنع ذكريات لا تُنسى' : 'Explore More · Create Memories'}
+              {isArabic ? 'يلا · تجوّل · كرر' : 'Yalla. Wander. Repeat.'}
             </motion.p>
 
 

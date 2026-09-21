@@ -5,8 +5,8 @@ export const siteConfig = {
     'Yalla Voyage crafts exceptional travel experiences — bespoke itineraries, private aviation, luxury retreats, and curated legacies with over 20 years of experience.',
   url: 'https://www.yallavoyage.com',
   email: 'info@yallavoyage.com',
-  phone: '+966 56 735 7250',
-  whatsapp: 'https://wa.me/966567357250',
+  phone: '+966 56 341 4649',
+  whatsapp: 'https://wa.me/966563414649',
   whatsappMessage: 'Hello Yalla Voyage, I\'d like to plan an exceptional trip.',
   address: {
     street: 'Al-Madinah Al-Munawarah road',

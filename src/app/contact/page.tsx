@@ -406,7 +406,7 @@ export default function ContactPage() {
                         <MessageCircle className="w-4 h-4 text-[#25D366]" /> {c.sendWhatsAppBtn}
                       </button>
                       <a
-                        href={`mailto:info@arabiaguidetravel.com?subject=${encodeURIComponent(
+                        href={`mailto:${siteConfig.email}?subject=${encodeURIComponent(
                           `يلا سفر Inquiry: ${form.name || 'Travel Request'}`
                         )}&body=${encodeURIComponent(
                           `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nDestination: ${form.destination}\nService: ${form.service}\nDates: ${form.travelDate}\nGuests: ${form.travellers}\nNotes: ${form.message}`
