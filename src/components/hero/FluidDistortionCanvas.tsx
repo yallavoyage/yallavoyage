@@ -13,7 +13,7 @@ export function FluidDistortionCanvas({ imageSrc }: FluidDistortionCanvasProps) 
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const gl = canvas.getContext('webgl', { alpha: false, antialias: true }) ||
+    const gl = canvas.getContext('webgl', { alpha: true, antialias: true }) ||
                (canvas.getContext('experimental-webgl') as WebGLRenderingContext | null);
 
     if (!gl) {
@@ -76,7 +76,7 @@ export function FluidDistortionCanvas({ imageSrc }: FluidDistortionCanvasProps) 
 
         float mWave = sin(mDist * 45.0 - u_time * 6.0);
         float mDecay = exp(-mDist * 12.0) * smoothstep(0.2, 0.005, mDist);
-        totalOffset += normalize(mDir + vec2(0.0001)) * mWave * mDecay * u_mouseIntensity * 0.012;
+        totalOffset += normalize(mDir + vec2(0.0001)) * mWave * mDecay * u_mouseIntensity * 0.014;
 
         // 2. Concentric Droplet Wave Rings
         for (int i = 0; i < 10; i++) {
@@ -97,7 +97,7 @@ export function FluidDistortionCanvas({ imageSrc }: FluidDistortionCanvasProps) 
             float wave = sin(dist * 55.0 - age * 12.0);
             float ringEnvelope = exp(-ringDist * 28.0) * exp(-age * 2.2);
             
-            totalOffset += normalize(dir + vec2(0.0001)) * wave * ringEnvelope * 0.012;
+            totalOffset += normalize(dir + vec2(0.0001)) * wave * ringEnvelope * 0.015;
           }
         }
 
@@ -230,23 +230,58 @@ export function FluidDistortionCanvas({ imageSrc }: FluidDistortionCanvasProps) 
 
     const handleResize = () => {
       const parent = canvas.parentElement;
-      if (!parent) return;
-      const width = parent.clientWidth;
-      const height = parent.clientHeight;
+      const width = parent?.clientWidth || window.innerWidth;
+      const height = parent?.clientHeight || window.innerHeight;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
+      canvas.width = Math.max(1, Math.floor(width * dpr));
+      canvas.height = Math.max(1, Math.floor(height * dpr));
       gl.viewport(0, 0, canvas.width, canvas.height);
     };
 
     handleResize();
     window.addEventListener('resize', handleResize);
 
-    const handleMouseMove = (e: MouseEvent) => {
+    const resizeObserver = new ResizeObserver(() => {
+      handleResize();
+    });
+    if (canvas.parentElement) {
+      resizeObserver.observe(canvas.parentElement);
+    }
+
+    // Process pointer movement anywhere over the hero section
+    const handlePointerMove = (e: MouseEvent | TouchEvent) => {
+      const isTouch = 'touches' in e;
+      const clientX = isTouch ? e.touches[0]?.clientX : (e as MouseEvent).clientX;
+      const clientY = isTouch ? e.touches[0]?.clientY : (e as MouseEvent).clientY;
+      if (clientX === undefined || clientY === undefined) return;
+
       const rect = canvas.getBoundingClientRect();
+      if (
+        clientX < rect.left ||
+        clientX > rect.right ||
+        clientY < rect.top ||
+        clientY > rect.bottom
+      ) {
+        return;
+      }
+
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const x = (e.clientX - rect.left) * dpr;
-      const y = (e.clientY - rect.top) * dpr;
+      const isRtl =
+        document.documentElement.dir === 'rtl' ||
+        document.documentElement.getAttribute('dir') === 'rtl';
+
+      const localX = isRtl ? (rect.right - clientX) : (clientX - rect.left);
+      const localY = clientY - rect.top;
+
+      const x = localX * dpr;
+      const y = localY * dpr;
+
+      if (prevMouse.x < 0) {
+        prevMouse.x = x;
+        prevMouse.y = y;
+        currentMouse.x = x;
+        currentMouse.y = y;
+      }
 
       targetMouse.x = x;
       targetMouse.y = y;
@@ -255,7 +290,7 @@ export function FluidDistortionCanvas({ imageSrc }: FluidDistortionCanvasProps) 
       const dy = y - prevMouse.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
 
-      mouseIntensity = Math.min(mouseIntensity + dist * 0.05 + 0.1, 1.5);
+      mouseIntensity = Math.min(mouseIntensity + dist * 0.05 + 0.12, 1.6);
 
       const now = performance.now();
       if (dist > 15 && now - lastDropTime > 40) {
@@ -267,10 +302,59 @@ export function FluidDistortionCanvas({ imageSrc }: FluidDistortionCanvasProps) 
       }
     };
 
-    const parentEl = canvas.parentElement;
-    if (parentEl) {
-      parentEl.addEventListener('mousemove', handleMouseMove, { passive: true });
-    }
+    // Click or tap to drop an immediate liquid ripple
+    const handlePointerDown = (e: MouseEvent | TouchEvent) => {
+      const isTouch = 'touches' in e;
+      const clientX = isTouch ? e.touches[0]?.clientX : (e as MouseEvent).clientX;
+      const clientY = isTouch ? e.touches[0]?.clientY : (e as MouseEvent).clientY;
+      if (clientX === undefined || clientY === undefined) return;
+
+      const rect = canvas.getBoundingClientRect();
+      if (
+        clientX < rect.left ||
+        clientX > rect.right ||
+        clientY < rect.top ||
+        clientY > rect.bottom
+      ) {
+        return;
+      }
+
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const isRtl =
+        document.documentElement.dir === 'rtl' ||
+        document.documentElement.getAttribute('dir') === 'rtl';
+
+      const localX = isRtl ? (rect.right - clientX) : (clientX - rect.left);
+      const localY = clientY - rect.top;
+
+      const x = localX * dpr;
+      const y = localY * dpr;
+
+      targetMouse.x = x;
+      targetMouse.y = y;
+      drops[nextDropIndex] = { x, y, age: 0.01 };
+      nextDropIndex = (nextDropIndex + 1) % 10;
+      mouseIntensity = Math.min(mouseIntensity + 0.9, 1.8);
+      prevMouse.x = x;
+      prevMouse.y = y;
+      lastDropTime = performance.now();
+    };
+
+    window.addEventListener('mousemove', handlePointerMove, { passive: true });
+    window.addEventListener('touchmove', handlePointerMove, { passive: true });
+    window.addEventListener('pointerdown', handlePointerDown, { passive: true });
+
+    // Initial ambient ripple on mount
+    const introTimeout = setTimeout(() => {
+      const rect = canvas.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const cx = rect.width * 0.52 * dpr;
+        const cy = rect.height * 0.48 * dpr;
+        drops[0] = { x: cx, y: cy, age: 0.01 };
+        mouseIntensity = 0.7;
+      }
+    }, 450);
 
     let lastFrameTime = performance.now();
 
@@ -314,10 +398,12 @@ export function FluidDistortionCanvas({ imageSrc }: FluidDistortionCanvasProps) 
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      clearTimeout(introTimeout);
       window.removeEventListener('resize', handleResize);
-      if (parentEl) {
-        parentEl.removeEventListener('mousemove', handleMouseMove);
-      }
+      resizeObserver.disconnect();
+      window.removeEventListener('mousemove', handlePointerMove);
+      window.removeEventListener('touchmove', handlePointerMove);
+      window.removeEventListener('pointerdown', handlePointerDown);
     };
   }, [imageSrc]);
 
