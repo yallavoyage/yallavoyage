@@ -235,6 +235,9 @@ export default function Hero() {
                         key={idx}
                         src={slide.img}
                         alt={slide.name}
+                        loading={idx === 0 ? 'eager' : 'lazy'}
+                        fetchPriority={idx === 0 ? 'high' : 'low'}
+                        decoding={idx === 0 ? 'sync' : 'async'}
                         className={`${styles.portalImg} ${idx === activeIndex ? styles.portalImgActive : ''}`}
                       />
                     ))}
