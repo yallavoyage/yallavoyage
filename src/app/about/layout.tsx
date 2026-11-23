@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: 'https://yallavoyage.com/about',
     images: [
       {
-        url: '/images/header-real-about.jpg',
+        url: '/images/header-real-about.webp',
         width: 1200,
         height: 630,
         alt: 'About Yalla Voyage',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'About Yalla Voyage | Luxury Travel & Bespoke Journeys',
     description:
       'Discover Yalla Voyage. Curating bespoke itineraries and luxury travel across Saudi Arabia and the world.',
-    images: ['/images/header-real-about.jpg'],
+    images: ['/images/header-real-about.webp'],
   },
 };
 

@@ -9,12 +9,12 @@ import styles from './PhotoStrip.module.css';
 gsap.registerPlugin(ScrollTrigger);
 
 const PHOTO_STRIP = [
-  { src: '/dest-alula.jpg',    label: 'AlUla',    coords: '26.5° N, 37.9° E', desc: 'Ancient Nabataean tombs standing silent in the golden desert dawn.' },
-  { src: '/dest-dubai.jpg',    label: 'Dubai',    coords: '25.2° N, 55.3° E', desc: 'A futuristic city silhouette soaring against the Arabian gulf.' },
-  { src: '/dest-maldives.jpg', label: 'Maldives', coords: '4.2° N, 73.5° E',  desc: 'Overwater bungalows floating on pure, quiet turquoise glass.' },
-  { src: '/dest-istanbul.jpg', label: 'Istanbul', coords: '41.0° N, 28.9° E', desc: 'Historic minarets rising through the soft Bosphorus morning mist.' },
-  { src: '/dest-muscat.jpg',   label: 'Muscat',   coords: '23.6° N, 58.6° E', desc: 'White-washed palaces nestled between rugged, desert mountains.' },
-  { src: '/dest-paris.jpg',    label: 'Paris',    coords: '48.9° N, 2.3° E',  desc: 'Wrought-iron balconies framing the classic Eiffel silhouette.' },
+  { src: '/dest-alula.webp',    label: 'AlUla',    coords: '26.5° N, 37.9° E', desc: 'Ancient Nabataean tombs standing silent in the golden desert dawn.' },
+  { src: '/dest-dubai.webp',    label: 'Dubai',    coords: '25.2° N, 55.3° E', desc: 'A futuristic city silhouette soaring against the Arabian gulf.' },
+  { src: '/dest-maldives.webp', label: 'Maldives', coords: '4.2° N, 73.5° E',  desc: 'Overwater bungalows floating on pure, quiet turquoise glass.' },
+  { src: '/dest-istanbul.webp', label: 'Istanbul', coords: '41.0° N, 28.9° E', desc: 'Historic minarets rising through the soft Bosphorus morning mist.' },
+  { src: '/dest-muscat.webp',   label: 'Muscat',   coords: '23.6° N, 58.6° E', desc: 'White-washed palaces nestled between rugged, desert mountains.' },
+  { src: '/dest-paris.webp',    label: 'Paris',    coords: '48.9° N, 2.3° E',  desc: 'Wrought-iron balconies framing the classic Eiffel silhouette.' },
 ];
 
 export default function PhotoStrip() {

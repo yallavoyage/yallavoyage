@@ -34,21 +34,21 @@ function useReveal(selector = '.reveal') {
 
 // ── Destination data ────────────────────────────────────────────────────────
 const DESTINATIONS = [
-  { name: 'A STUDY IN ANCIENT WONDER',  sub: '26.5° N, 37.9° E',  location: 'AlUla, Saudi Arabia',   img: '/dest-alula.jpg' },
-  { name: 'DUBAI CITY FANTASY',         sub: '25.2° N, 55.3° E',  location: 'Dubai, UAE',             img: '/dest-dubai.jpg' },
-  { name: 'PARADISE FOUND',             sub: '4.2° N, 73.5° E',   location: 'Maldives',               img: '/dest-maldives.jpg' },
-  { name: 'CITY OF EMPIRES',            sub: '41.0° N, 28.9° E',  location: 'Istanbul, Turkey',       img: '/dest-istanbul.jpg' },
-  { name: 'ARABIAN COASTAL CANOPY',     sub: '23.6° N, 58.6° E',  location: 'Muscat, Oman',           img: '/dest-muscat.jpg' },
-  { name: 'CITY OF LIGHT',              sub: '48.9° N, 2.3° E',   location: 'Paris, France',          img: '/dest-paris.jpg' },
+  { name: 'A STUDY IN ANCIENT WONDER',  sub: '26.5° N, 37.9° E',  location: 'AlUla, Saudi Arabia',   img: '/dest-alula.webp' },
+  { name: 'DUBAI CITY FANTASY',         sub: '25.2° N, 55.3° E',  location: 'Dubai, UAE',             img: '/dest-dubai.webp' },
+  { name: 'PARADISE FOUND',             sub: '4.2° N, 73.5° E',   location: 'Maldives',               img: '/dest-maldives.webp' },
+  { name: 'CITY OF EMPIRES',            sub: '41.0° N, 28.9° E',  location: 'Istanbul, Turkey',       img: '/dest-istanbul.webp' },
+  { name: 'ARABIAN COASTAL CANOPY',     sub: '23.6° N, 58.6° E',  location: 'Muscat, Oman',           img: '/dest-muscat.webp' },
+  { name: 'CITY OF LIGHT',              sub: '48.9° N, 2.3° E',   location: 'Paris, France',          img: '/dest-paris.webp' },
 ];
 
 const SERVICES = [
-  { num: '01', title: 'Custom Packages',     desc: 'Every itinerary handcrafted to your desires — bespoke routes, curated hotels, private transfers.', img: '/dest-istanbul.jpg' },
-  { num: '02', title: 'Honeymoon Planning',  desc: 'Once-in-a-lifetime romantic escapes. Overwater villas, private dinners, surprise arrangements.', img: '/dest-maldives.jpg' },
-  { num: '03', title: 'Group & Family',      desc: 'Coordinated logistics for family reunions, school trips, and corporate outings.', img: '/dest-alula.jpg' },
-  { num: '04', title: 'Corporate Travel',    desc: 'Streamlined business travel for GCC companies — executive retreats, business class, priority booking.', img: '/dest-dubai.jpg' },
-  { num: '05', title: 'Visa Assistance',     desc: 'We handle the paperwork. Tourist, business, and multi-country visas, prepared and fast-tracked.', img: '/dest-paris.jpg' },
-  { num: '06', title: 'Umrah Services',      desc: 'Meticulously designed pilgrimage travel, featuring luxury hotels close to the Haram, smooth VIP airport transfers, and visa processing.', img: 'https://upload.wikimedia.org/wikipedia/commons/7/79/The_Kaaba_during_Hajj.jpg' },
+  { num: '01', title: 'Custom Packages',     desc: 'Every itinerary handcrafted to your desires — bespoke routes, curated hotels, private transfers.', img: '/dest-istanbul.webp' },
+  { num: '02', title: 'Honeymoon Planning',  desc: 'Once-in-a-lifetime romantic escapes. Overwater villas, private dinners, surprise arrangements.', img: '/dest-maldives.webp' },
+  { num: '03', title: 'Group & Family',      desc: 'Coordinated logistics for family reunions, school trips, and corporate outings.', img: '/dest-alula.webp' },
+  { num: '04', title: 'Corporate Travel',    desc: 'Streamlined business travel for GCC companies — executive retreats, business class, priority booking.', img: '/dest-dubai.webp' },
+  { num: '05', title: 'Visa Assistance',     desc: 'We handle the paperwork. Tourist, business, and multi-country visas, prepared and fast-tracked.', img: '/dest-paris.webp' },
+  { num: '06', title: 'Umrah Services',      desc: 'Meticulously designed pilgrimage travel, featuring luxury hotels close to the Haram, smooth VIP airport transfers, and visa processing.', img: '/images/service-umrah-vip.webp' },
 ];
 
 const TESTIMONIALS = [

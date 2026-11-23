@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: 'https://yallavoyage.com/contact',
     images: [
       {
-        url: '/images/header-real-contact.jpg',
+        url: '/images/header-real-contact.webp',
         width: 1200,
         height: 630,
         alt: 'Contact Yalla Voyage',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'Contact Yalla Voyage | Bespoke Travel Concierge',
     description:
       'Begin your journey with Yalla Voyage. Speak directly with our travel designers or contact our VIP concierge.',
-    images: ['/images/header-real-contact.jpg'],
+    images: ['/images/header-real-contact.webp'],
   },
 };
 

@@ -3,7 +3,8 @@
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, Globe, Compass, Sparkles, Award, ShieldCheck, Star, BookOpen } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Star } from 'lucide-react';
+import { Flaticon } from '@/components/ui/Flaticon';
 import { HeroScene } from '@/components/hero/HeroScene';
 import { Reveal, StaggerReveal } from '@/components/ui/Reveal';
 import { BlurReveal } from '@/components/ui/BlurReveal';
@@ -47,7 +48,7 @@ function WhoWeAre() {
             </Reveal>
 
             <Reveal delay={0.12}>
-              <p className="text-[#0F2E23]/85 text-base sm:text-lg leading-relaxed font-normal font-sans">
+              <p className="text-[#0F2E23]/85 text-base sm:text-lg leading-relaxed font-normal font-sans text-justify">
                 {t.whoWeAre.para1Prefix}
                 <strong className="font-semibold text-[#0F2E23]">{t.whoWeAre.brandName}</strong>
                 {t.whoWeAre.para1Suffix}
@@ -55,7 +56,7 @@ function WhoWeAre() {
             </Reveal>
 
             <Reveal delay={0.18}>
-              <p className="text-[#0F2E23]/85 text-base sm:text-lg leading-relaxed font-normal font-sans">
+              <p className="text-[#0F2E23]/85 text-base sm:text-lg leading-relaxed font-normal font-sans text-justify">
                 {t.whoWeAre.para2}
               </p>
             </Reveal>
@@ -70,7 +71,7 @@ function WhoWeAre() {
           </div>
 
           {/* Right: drum — no Reveal wrapper so no translateY offset */}
-          <div className="lg:col-span-6 flex items-start justify-center overflow-hidden">
+          <div className="lg:col-span-6 flex items-start justify-center w-full overflow-visible mt-12 sm:mt-14 lg:mt-0">
             <CylinderGallery />
           </div>
         </div>
@@ -85,17 +86,17 @@ function WhatSetsUsApart() {
 
   const pillars = [
     {
-      icon: <Globe className="w-5 h-5" />,
+      icon: <Flaticon name="travel-agency" className="w-5 h-5 text-current" />,
       title: t.whatSetsUsApart.pillar1Title,
       description: t.whatSetsUsApart.pillar1Desc,
     },
     {
-      icon: <Sparkles className="w-5 h-5" />,
+      icon: <Flaticon name="passport" className="w-5 h-5 text-current" />,
       title: t.whatSetsUsApart.pillar2Title,
       description: t.whatSetsUsApart.pillar2Desc,
     },
     {
-      icon: <Compass className="w-5 h-5" />,
+      icon: <Flaticon name="customer-service" className="w-5 h-5 text-current" />,
       title: t.whatSetsUsApart.pillar3Title,
       description: t.whatSetsUsApart.pillar3Desc,
     },
@@ -157,7 +158,7 @@ function WhatSetsUsApart() {
                   <div className="space-y-4">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-xl bg-[#13382B] border border-[#2E6B57]/60 flex items-center justify-center text-[#39C27D] flex-shrink-0 mt-0.5">
-                        <Award className="w-5 h-5" />
+                        <Flaticon name="travel-guide" className="w-5 h-5 text-[#39C27D]" />
                       </div>
                       <div>
                         <h3 className="font-heading text-lg font-medium text-[#F4EFE6]">{t.whatSetsUsApart.masteryTitle}</h3>
@@ -167,7 +168,7 @@ function WhatSetsUsApart() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-xl bg-[#13382B] border border-[#2E6B57]/60 flex items-center justify-center text-[#39C27D] flex-shrink-0 mt-0.5">
-                        <Star className="w-5 h-5" />
+                        <Flaticon name="passport" className="w-5 h-5 text-[#39C27D]" />
                       </div>
                       <div>
                         <h3 className="font-heading text-lg font-medium text-[#F4EFE6]">{t.whatSetsUsApart.accessTitle}</h3>
@@ -177,7 +178,7 @@ function WhatSetsUsApart() {
 
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-xl bg-[#13382B] border border-[#2E6B57]/60 flex items-center justify-center text-[#39C27D] flex-shrink-0 mt-0.5">
-                        <ShieldCheck className="w-5 h-5" />
+                        <Flaticon name="visa" className="w-5 h-5 text-[#39C27D]" />
                       </div>
                       <div>
                         <h3 className="font-heading text-lg font-medium text-[#F4EFE6]">{t.whatSetsUsApart.legacyTitle}</h3>
@@ -360,7 +361,7 @@ function TravelJournal() {
             href="/travel-journal"
             className="group inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#13382B] border border-[#2E6B57]/50 text-xs font-mono font-semibold uppercase tracking-wider text-[#F4EFE6] hover:border-[#39C27D] hover:bg-[#2E6B57] transition-all self-start md:self-auto flex-shrink-0 font-sans shadow-md"
           >
-            <BookOpen className="w-3.5 h-3.5 text-[#39C27D]" />
+            <Flaticon name="travel-guide" className="w-3.5 h-3.5 text-[#39C27D]" />
             <span>{t.journal.exploreBtn}</span>
             <ArrowRight className="w-3.5 h-3.5 text-[#39C27D] group-hover:translate-x-1 rtl:rotate-180 transition-transform" />
           </Link>
@@ -433,7 +434,7 @@ function TravelJournal() {
               href="/travel-journal"
               className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-[#0F2E23] text-[#F4EFE6] hover:bg-[#2E6B57] hover:text-white font-medium text-xs sm:text-sm uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-xl hover:scale-[1.02] font-sans group"
             >
-              <BookOpen className="w-4 h-4 text-[#39C27D]" />
+              <Flaticon name="travel-guide" className="w-4 h-4 text-[#39C27D]" />
               <span>{t.journal.exploreBtn}</span>
               <ArrowRight className="w-4 h-4 text-[#39C27D] group-hover:translate-x-1 rtl:rotate-180 transition-transform" />
             </Link>

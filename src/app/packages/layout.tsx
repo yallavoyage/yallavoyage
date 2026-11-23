@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: 'https://yallavoyage.com/packages',
     images: [
       {
-        url: '/dest-maldives.jpg',
+        url: '/dest-maldives.webp',
         width: 1200,
         height: 630,
         alt: 'Yalla Voyage Travel Packages',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'Curated Travel Packages | Yalla Voyage',
     description:
       'Handcrafted luxury travel packages and bespoke itineraries by Yalla Voyage.',
-    images: ['/dest-maldives.jpg'],
+    images: ['/dest-maldives.webp'],
   },
 };
 

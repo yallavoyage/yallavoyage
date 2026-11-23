@@ -6,10 +6,8 @@ import Link from 'next/link';
 import {
   ArrowRight,
   CheckCircle2,
-  ShieldCheck,
-  Award,
-  Compass,
 } from 'lucide-react';
+import { Flaticon } from '@/components/ui/Flaticon';
 import { PageHero } from '@/components/ui/PageHero';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal, StaggerReveal } from '@/components/ui/Reveal';
@@ -131,7 +129,7 @@ export default function ServicesPage() {
       <PageHero
         title={s.heroTitle}
         subtitle={s.heroSubtitle}
-        image="/images/header-real-services.jpg"
+        image="/images/header-real-services.webp"
         alt="Lake Como and Bellagio Waterfront, Italy"
         positionClass="object-center"
       />
@@ -150,7 +148,7 @@ export default function ServicesPage() {
               <div className="absolute top-0 right-0 w-36 h-36 bg-[#39C27D]/10 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10 group-hover:bg-[#39C27D]/20 transition-all duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 text-[#39C27D] flex items-center justify-center mb-5 group-hover:bg-[#39C27D] group-hover:text-[#0F2E23] transition-all duration-300 shadow-sm">
-                  <Compass className="w-6 h-6" />
+                  <Flaticon name="travel-guide" className="w-6 h-6 text-[#39C27D] group-hover:text-[#0F2E23]" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
                   {s.advantage1Title}
@@ -165,7 +163,7 @@ export default function ServicesPage() {
               <div className="absolute top-0 right-0 w-36 h-36 bg-[#39C27D]/10 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10 group-hover:bg-[#39C27D]/20 transition-all duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 text-[#39C27D] flex items-center justify-center mb-5 group-hover:bg-[#39C27D] group-hover:text-[#0F2E23] transition-all duration-300 shadow-sm">
-                  <Award className="w-6 h-6" />
+                  <Flaticon name="travel-agency" className="w-6 h-6 text-[#39C27D] group-hover:text-[#0F2E23]" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
                   {s.advantage2Title}
@@ -180,7 +178,7 @@ export default function ServicesPage() {
               <div className="absolute top-0 right-0 w-36 h-36 bg-[#39C27D]/10 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10 group-hover:bg-[#39C27D]/20 transition-all duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 text-[#39C27D] flex items-center justify-center mb-5 group-hover:bg-[#39C27D] group-hover:text-[#0F2E23] transition-all duration-300 shadow-sm">
-                  <ShieldCheck className="w-6 h-6" />
+                  <Flaticon name="passport" className="w-6 h-6 text-[#39C27D] group-hover:text-[#0F2E23]" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
                   {s.advantage3Title}

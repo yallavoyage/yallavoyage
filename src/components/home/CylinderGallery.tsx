@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 
 /* ─── Cylinder geometry ─────────────────────────────────────────────────
@@ -76,6 +76,7 @@ const PANELS: DrumPanel[] = [
 ];
 
 export function CylinderGallery() {
+  const containerRef = useRef<HTMLDivElement>(null);
   const wrapperRef  = useRef<HTMLDivElement>(null);
   const drumRef     = useRef<HTMLDivElement>(null);
   const angleRef    = useRef(0);
@@ -83,6 +84,27 @@ export function CylinderGallery() {
   const isDragging  = useRef(false);
   const lastX       = useRef(0);
   const rafId       = useRef(0);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const updateScale = () => {
+      if (containerRef.current) {
+        const parentW = containerRef.current.parentElement?.clientWidth || window.innerWidth;
+        const screenW = window.innerWidth;
+        // Total projected 3D drum span is ~550px
+        const safeWidth = Math.min(parentW, screenW - 24);
+        if (safeWidth < 550) {
+          setScale(Math.max(0.48, Math.min(1, safeWidth / 550)));
+        } else {
+          setScale(1);
+        }
+      }
+    };
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
 
   useEffect(() => {
     const wrapper = wrapperRef.current;
@@ -159,21 +181,32 @@ export function CylinderGallery() {
 
   return (
     <div
+      ref={containerRef}
+      className="w-full flex items-center justify-center overflow-visible"
       style={{
-        perspective:       '1200px',
-        perspectiveOrigin: '50% 50%',
-        width:             `${VW}px`,
-        height:            `${VH}px`,
-        overflow:          'visible',
-        position:          'relative',
-        userSelect:        'none',
-        WebkitUserSelect:  'none',
+        height: `${Math.round(VH * scale)}px`,
+        transition: 'height 0.2s ease-out',
       }}
     >
       <div
-        ref={wrapperRef}
-        style={{ position: 'absolute', inset: 0, cursor: 'grab' }}
+        style={{
+          perspective:       '1200px',
+          perspectiveOrigin: '50% 50%',
+          width:             `${VW}px`,
+          height:            `${VH}px`,
+          overflow:          'visible',
+          position:          'relative',
+          userSelect:        'none',
+          WebkitUserSelect:  'none',
+          transform:         `scale(${scale})`,
+          transformOrigin:   'top center',
+          transition:        'transform 0.2s ease-out',
+        }}
       >
+        <div
+          ref={wrapperRef}
+          style={{ position: 'absolute', inset: 0, cursor: 'grab' }}
+        >
         <div
           style={{
             position:       'absolute',
@@ -326,6 +359,7 @@ export function CylinderGallery() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
 

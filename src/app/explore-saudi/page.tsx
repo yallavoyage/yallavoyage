@@ -5,13 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   ArrowRight,
-  MapPin,
-  Sparkles,
-  Compass,
-  Award,
-  ShieldCheck,
   CheckCircle2,
 } from 'lucide-react';
+import { Flaticon } from '@/components/ui/Flaticon';
 import { Reveal, StaggerReveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { MagneticButton } from '@/components/ui/MagneticButton';
@@ -250,7 +246,7 @@ export default function ExploreSaudiPage() {
       <PageHero
         title={es.heroTitle}
         subtitle={es.heroSubtitle}
-        image="/images/header-real-saudi.jpg"
+        image="/images/header-real-saudi.webp"
         alt="AlUla Sandstone Desert Sanctuary, Saudi Arabia"
         positionClass="object-center"
       />
@@ -269,7 +265,7 @@ export default function ExploreSaudiPage() {
               <div className="absolute top-0 right-0 w-36 h-36 bg-[#39C27D]/10 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10 group-hover:bg-[#39C27D]/20 transition-all duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 text-[#39C27D] flex items-center justify-center mb-5 group-hover:bg-[#39C27D] group-hover:text-[#0F2E23] transition-all duration-300 shadow-sm">
-                  <Compass className="w-6 h-6" />
+                  <Flaticon name="travel-guide" className="w-6 h-6 text-[#39C27D] group-hover:text-[#0F2E23]" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
                   {es.advantage1Title}
@@ -284,7 +280,7 @@ export default function ExploreSaudiPage() {
               <div className="absolute top-0 right-0 w-36 h-36 bg-[#39C27D]/10 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10 group-hover:bg-[#39C27D]/20 transition-all duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 text-[#39C27D] flex items-center justify-center mb-5 group-hover:bg-[#39C27D] group-hover:text-[#0F2E23] transition-all duration-300 shadow-sm">
-                  <Sparkles className="w-6 h-6" />
+                  <Flaticon name="arabic" className="w-6 h-6 text-[#39C27D] group-hover:text-[#0F2E23]" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
                   {es.advantage2Title}
@@ -299,7 +295,7 @@ export default function ExploreSaudiPage() {
               <div className="absolute top-0 right-0 w-36 h-36 bg-[#39C27D]/10 rounded-full blur-2xl pointer-events-none -mr-10 -mt-10 group-hover:bg-[#39C27D]/20 transition-all duration-500" />
               <div className="relative z-10">
                 <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/10 text-[#39C27D] flex items-center justify-center mb-5 group-hover:bg-[#39C27D] group-hover:text-[#0F2E23] transition-all duration-300 shadow-sm">
-                  <ShieldCheck className="w-6 h-6" />
+                  <Flaticon name="passport" className="w-6 h-6 text-[#39C27D] group-hover:text-[#0F2E23]" />
                 </div>
                 <h3 className="text-xl font-display text-[#F4EFE6] mb-2.5 font-semibold">
                   {es.advantage3Title}
@@ -570,7 +566,7 @@ function DestinationVideoCard({
                       key={place.name}
                       className="px-3 py-1.5 rounded-lg bg-[#F4EFE6] text-[#0F2E23]/80 text-xs font-medium border border-[#0F2E23]/8 flex items-center gap-1.5 font-sans hover:bg-[#EAE3D5] transition-colors"
                     >
-                      <MapPin className="w-3.5 h-3.5 text-[#2E6B57]" />
+                      <Flaticon name="location" className="w-3.5 h-3.5 text-[#2E6B57] flex-shrink-0" />
                       {placeName.length > 28 ? placeName.slice(0, 25) + '…' : placeName}
                     </span>
                   );

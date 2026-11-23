@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: 'https://yallavoyage.com/services',
     images: [
       {
-        url: '/images/header-real-services.jpg',
+        url: '/images/header-real-services.webp',
         width: 1200,
         height: 630,
         alt: 'Yalla Voyage Travel Services',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'Travel Services | Yalla Voyage',
     description:
       'Corporate travel, bespoke leisure, luxury cruises, and private charters tailored by Yalla Voyage.',
-    images: ['/images/header-real-services.jpg'],
+    images: ['/images/header-real-services.webp'],
   },
 };
 

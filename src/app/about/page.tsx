@@ -1,7 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import { ArrowRight, Compass, Shield, Heart, Award, MessageCircle, Phone } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Flaticon } from '@/components/ui/Flaticon';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal, StaggerReveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -18,7 +19,7 @@ export default function AboutPage() {
       <PageHero
         title={a.heroTitle}
         subtitle={a.heroSubtitle}
-        image="/images/header-real-about.jpg"
+        image="/images/header-real-about.webp"
         alt="Oia Santorini Cliffside Caldera, Greece"
         positionClass="object-center"
       />
@@ -44,7 +45,7 @@ export default function AboutPage() {
               </Reveal>
 
               <Reveal delay={0.2}>
-                <p className="text-[#0F2E23]/70 text-sm sm:text-base leading-relaxed font-light font-sans">
+                <p className="text-[#0F2E23]/70 text-sm sm:text-base leading-relaxed font-light font-sans text-justify">
                   {a.genesisDesc}
                 </p>
               </Reveal>
@@ -101,8 +102,8 @@ export default function AboutPage() {
           <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" stagger={0.08}>
             <div className="p-6 rounded-2xl bg-[#F4EFE6]/60 border border-[#0F2E23]/8 hover:border-[#2E6B57]/30 hover:bg-[#F4EFE6] transition-all flex flex-col justify-between">
               <div>
-                <div className="w-11 h-11 rounded-xl bg-[#0F2E23] text-[#39C27D] flex items-center justify-center mb-4">
-                  <Compass className="w-5 h-5" />
+                <div className="w-11 h-11 rounded-xl bg-[#0F2E23] text-[#39C27D] flex items-center justify-center mb-4 shadow-xs">
+                  <Flaticon name="travel-guide" className="w-5 h-5 text-[#39C27D]" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-[#0F2E23] mb-1.5">{a.pillar1Title}</h3>
                 <p className="text-xs sm:text-sm text-[#0F2E23]/65 font-light leading-relaxed font-sans">
@@ -113,8 +114,8 @@ export default function AboutPage() {
 
             <div className="p-6 rounded-2xl bg-[#F4EFE6]/60 border border-[#0F2E23]/8 hover:border-[#2E6B57]/30 hover:bg-[#F4EFE6] transition-all flex flex-col justify-between">
               <div>
-                <div className="w-11 h-11 rounded-xl bg-[#0F2E23] text-[#39C27D] flex items-center justify-center mb-4">
-                  <Shield className="w-5 h-5" />
+                <div className="w-11 h-11 rounded-xl bg-[#0F2E23] text-[#39C27D] flex items-center justify-center mb-4 shadow-xs">
+                  <Flaticon name="passport" className="w-5 h-5 text-[#39C27D]" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-[#0F2E23] mb-1.5">{a.pillar2Title}</h3>
                 <p className="text-xs sm:text-sm text-[#0F2E23]/65 font-light leading-relaxed font-sans">
@@ -125,8 +126,8 @@ export default function AboutPage() {
 
             <div className="p-6 rounded-2xl bg-[#F4EFE6]/60 border border-[#0F2E23]/8 hover:border-[#2E6B57]/30 hover:bg-[#F4EFE6] transition-all flex flex-col justify-between">
               <div>
-                <div className="w-11 h-11 rounded-xl bg-[#0F2E23] text-[#39C27D] flex items-center justify-center mb-4">
-                  <Award className="w-5 h-5" />
+                <div className="w-11 h-11 rounded-xl bg-[#0F2E23] text-[#39C27D] flex items-center justify-center mb-4 shadow-xs">
+                  <Flaticon name="travel-agency" className="w-5 h-5 text-[#39C27D]" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-[#0F2E23] mb-1.5">{a.pillar3Title}</h3>
                 <p className="text-xs sm:text-sm text-[#0F2E23]/65 font-light leading-relaxed font-sans">
@@ -137,8 +138,8 @@ export default function AboutPage() {
 
             <div className="p-6 rounded-2xl bg-[#F4EFE6]/60 border border-[#0F2E23]/8 hover:border-[#2E6B57]/30 hover:bg-[#F4EFE6] transition-all flex flex-col justify-between">
               <div>
-                <div className="w-11 h-11 rounded-xl bg-[#0F2E23] text-[#39C27D] flex items-center justify-center mb-4">
-                  <Heart className="w-5 h-5" />
+                <div className="w-11 h-11 rounded-xl bg-[#0F2E23] text-[#39C27D] flex items-center justify-center mb-4 shadow-xs">
+                  <Flaticon name="honeymoon-trip" className="w-5 h-5 text-[#39C27D]" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-[#0F2E23] mb-1.5">{a.pillar4Title}</h3>
                 <p className="text-xs sm:text-sm text-[#0F2E23]/65 font-light leading-relaxed font-sans">
@@ -147,45 +148,6 @@ export default function AboutPage() {
               </div>
             </div>
           </StaggerReveal>
-        </div>
-      </section>
-
-      {/* ── SECTION 3: Private Consultation & Concierge Strip ── */}
-      <section className="py-16 sm:py-20 bg-[#0F2E23] text-[#F4EFE6] border-t border-[#2E6B57]/30">
-        <div className="container-wide">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
-            <span className="text-xs font-mono uppercase tracking-[0.2em] text-[#39C27D] font-semibold block">
-              {isRTL ? 'خدمة كونسيرج خاصة ٢٤/٧' : 'Private Concierge 24/7'}
-            </span>
-            <h2 className="text-display text-2xl sm:text-4xl text-[#F4EFE6] font-light">
-              {isRTL ? 'ابدأ محادثتك مع مصمم رحلاتك' : 'Begin Your Conversation With a Travel Designer'}
-            </h2>
-            <p className="text-sm sm:text-base text-[#DAD6CD]/80 font-light max-w-xl mx-auto font-sans">
-              {isRTL
-                ? 'فريقنا في جدة جاهز لتصميم وتنسيق أدق تفاصيل رحلتكم عبر الواتساب أو الهاتف مباشرة.'
-                : 'Our Jeddah-based team is on hand to tailor every detail of your itinerary directly on WhatsApp or over the phone.'}
-            </p>
-            <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href={`${siteConfig.whatsapp}?text=${encodeURIComponent(
-                  'Hello Yalla Voyage, I would love to begin planning an exceptional journey.'
-                )}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#25D366] text-white hover:bg-[#20ba59] transition-all font-sans text-xs sm:text-sm font-medium shadow-lg hover:shadow-xl hover:scale-105"
-              >
-                <MessageCircle className="w-4 h-4 fill-white" />
-                <span dir="ltr">WhatsApp: +966 56 735 7250</span>
-              </a>
-              <a
-                href={`tel:${siteConfig.phone.replace(/[^0-9+]/g, '')}`}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#163A2D] text-[#F4EFE6] border border-[#2E6B57]/60 hover:border-[#39C27D] transition-all font-sans text-xs sm:text-sm font-medium"
-              >
-                <Phone className="w-4 h-4 text-[#39C27D]" />
-                <span dir="ltr">{isRTL ? '+٩٦٦‎ ٥٦‎ ٧٣٥‎ ٧٢٥٠' : siteConfig.phone}</span>
-              </a>
-            </div>
-          </div>
         </div>
       </section>
 

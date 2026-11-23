@@ -40,6 +40,9 @@ export function HeroScene() {
       <img
         src="/images/yalla-alula-user-hero.webp"
         alt="AlUla Landscape Sanctuary"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover object-[62%_center] sm:object-[78%_center] lg:object-center pointer-events-none z-0 rtl:scale-x-[-1]"
       />
 

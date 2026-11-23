@@ -58,7 +58,7 @@ export const metadata: Metadata = {
       'Yalla Voyage crafts extraordinary travel — corporate, luxury, cruise, and beyond — with precision, passion, and a team that never settles for ordinary. Where journeys become stories.',
     images: [
       {
-        url: '/images/header-real-saudi.jpg',
+        url: '/images/header-real-saudi.webp',
         width: 1200,
         height: 630,
         alt: 'Yalla Voyage — Premium Travel Agency Saudi Arabia & Worldwide',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: 'Yalla Voyage | Premium Travel Agency — Saudi Arabia & Beyond',
     description:
       'Bespoke luxury travel, corporate journeys, private aviation, and unforgettable adventures across Saudi Arabia and the world.',
-    images: ['/images/header-real-saudi.jpg'],
+    images: ['/images/header-real-saudi.webp'],
     creator: '@yallavoyage',
   },
   robots: {
@@ -112,7 +112,7 @@ const jsonLdData = {
       alternateName: 'يلا سفر',
       url: 'https://yallavoyage.com',
       logo: 'https://yallavoyage.com/logo.png',
-      image: 'https://yallavoyage.com/images/header-real-saudi.jpg',
+      image: 'https://yallavoyage.com/images/header-real-saudi.webp',
       description:
         'Yalla Voyage crafts exceptional travel experiences — bespoke itineraries, private aviation, luxury retreats, corporate travel, and curated voyages across Saudi Arabia and worldwide.',
       telephone: '+966 56 735 7250',
@@ -184,7 +184,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SmoothScroll>
             <ScrollProgress />
             <Navbar />
-            <main>{children}</main>
+            <div className="flex-1 w-full">{children}</div>
             <Footer />
           </SmoothScroll>
           <WhatsAppButton />

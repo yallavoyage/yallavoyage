@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     url: 'https://yallavoyage.com/explore-saudi',
     images: [
       {
-        url: '/images/header-real-saudi.jpg',
+        url: '/images/header-real-saudi.webp',
         width: 1200,
         height: 630,
         alt: 'Explore Saudi Arabia with Yalla Voyage',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'Explore Saudi Arabia | Yalla Voyage',
     description:
       'Immerse in the Kingdom’s most extraordinary landscapes, cultural treasures, and luxury resorts.',
-    images: ['/images/header-real-saudi.jpg'],
+    images: ['/images/header-real-saudi.webp'],
   },
 };
 

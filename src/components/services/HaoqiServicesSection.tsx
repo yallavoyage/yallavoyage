@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { Flaticon, FlaticonName } from '@/components/ui/Flaticon';
 import { homepageServices } from '@/data/services';
 import { CardSwap, Card } from '@/components/ui/CardSwap';
 
@@ -12,6 +13,17 @@ import { useLanguage } from '@/context/LanguageContext';
 export function HaoqiServicesSection() {
   const router = useRouter();
   const { t, locale } = useLanguage();
+
+  const serviceIconMap: Record<string, FlaticonName> = {
+    'Bespoke Travel & Adventures': 'road-trip',
+    'Wellness and Retreat': 'honeymoon-trip',
+    'Educational Tours': 'travel-guide',
+    'Ladies Trips': 'businesswoman',
+    'Private Aviation & Chauffeurs': 'airplane',
+    'Corporate MICE & Retreats': 'people',
+    'Flights & 5-Star Hotels': 'travel-bag',
+    'Visas & Documentation': 'visa',
+  };
 
   const arabicHomepageServices: Record<
     string,
@@ -87,7 +99,7 @@ export function HaoqiServicesSection() {
               {t.services.titleMain} <span className="text-[#2E6B57]">{t.services.titleHighlight}</span>
             </h2>
 
-            <p className="text-base sm:text-lg text-[#0F2E23]/75 font-light leading-relaxed font-sans">
+            <p className="text-base sm:text-lg text-[#0F2E23]/75 font-light leading-relaxed font-sans text-justify">
               {t.services.description}
             </p>
 
@@ -103,7 +115,10 @@ export function HaoqiServicesSection() {
                     className="group flex items-center justify-between p-3.5 rounded-2xl bg-white/80 hover:bg-white border border-[#0F2E23]/8 hover:border-[#2E6B57]/40 transition-all duration-200 cursor-pointer shadow-2xs hover:shadow-md"
                   >
                     <div className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#39C27D] group-hover:scale-125 transition-transform" />
+                      <Flaticon
+                        name={serviceIconMap[svc.title] || 'travel-agency'}
+                        className="w-4 h-4 text-[#39C27D] group-hover:text-[#2E6B57] transition-colors flex-shrink-0"
+                      />
                       <span className="text-sm font-sans font-medium text-[#0F2E23] group-hover:text-[#2E6B57] transition-colors">
                         {localizedTitle}
                       </span>
@@ -127,7 +142,7 @@ export function HaoqiServicesSection() {
           </div>
 
           {/* 3D Interactive CardSwap Stage (order-1 on mobile, order-2 on desktop) */}
-          <div className="order-1 lg:order-2 lg:col-span-7 relative w-full h-[460px] sm:h-[540px] lg:h-[600px] flex items-center justify-center">
+          <div className="order-1 lg:order-2 lg:col-span-7 relative w-full h-[440px] sm:h-[520px] lg:h-[600px] mb-8 sm:mb-10 lg:mb-0 flex items-center justify-center">
             
             <div className="relative w-full h-full flex items-center justify-center">
               <CardSwap
@@ -179,8 +194,12 @@ export function HaoqiServicesSection() {
 
                         {/* Properly Placed Discover Button */}
                         <div className="pt-3 border-t border-white/15 flex items-center justify-between">
-                          <span className="text-xs font-mono font-medium text-[#39C27D] uppercase tracking-wider">
-                            {locale === 'ar' ? 'خدمة متميزة' : 'Explore Service'}
+                          <span className="text-xs font-mono font-medium text-[#39C27D] uppercase tracking-wider flex items-center gap-1.5">
+                            <Flaticon
+                              name={serviceIconMap[service.title] || 'travel-agency'}
+                              className="w-3.5 h-3.5 text-[#39C27D]"
+                            />
+                            <span>{locale === 'ar' ? 'خدمة متميزة' : 'Explore Service'}</span>
                           </span>
                           <Link
                             href={service.href || '/services'}

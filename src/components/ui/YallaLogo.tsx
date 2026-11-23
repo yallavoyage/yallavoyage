@@ -38,8 +38,8 @@ export function YallaLogo({
 
   const taglineColor = isDark ? '#DAD6CD' : '#6D8377';
   const logoSrc = isArabic
-    ? '/yalla-voyage-logo-ar-transparent.png'
-    : '/yalla-voyage-logo-transparent.png';
+    ? '/yalla-voyage-logo-ar-transparent.webp'
+    : '/yalla-voyage-logo-transparent.webp';
 
   return (
     <div

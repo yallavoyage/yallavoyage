@@ -109,9 +109,56 @@ html[lang="ar"] .font-mono,
 [dir="rtl"] h3,
 [dir="rtl"] h4,
 [dir="rtl"] h5,
-[dir="rtl"] h6,
-[dir="rtl"] p {
+[dir="rtl"] h6 {
   text-align: right;
+}
+
+[dir="rtl"] p {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: right;
+}
+
+[dir="rtl"] .text-center,
+[dir="rtl"] .text-center p,
+[dir="rtl"] p.text-center {
+  text-align: center !important;
+  text-align-last: center !important;
+}
+
+/* ── Justified Paragraph Alignment (Clean Editorial Typography All Over) ── */
+p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Maintain intentional text alignments across components */
+.text-center,
+.text-center p,
+p.text-center {
+  text-align: center !important;
+  text-align-last: center !important;
+}
+
+.text-left,
+.text-left p,
+p.text-left {
+  text-align: left !important;
+  text-align-last: left !important;
+}
+
+.text-right,
+.text-right p,
+p.text-right {
+  text-align: right !important;
+  text-align-last: right !important;
+}
+
+.text-justify,
+.text-justify p,
+p.text-justify {
+  text-align: justify !important;
+  text-justify: inter-word !important;
 }
 
 /* ── Custom 3D Paper Plane Cursor (Fine Pointers) ── */

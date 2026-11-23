@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = BLOG_POSTS.find(p => p.slug === slug);
   if (!post) return {};
-  const coverImage = post.cover_image || '/images/header-real-saudi.jpg';
+  const coverImage = post.cover_image || '/images/header-real-saudi.webp';
 
   return {
     title: `${post.title} | Yalla Voyage Blog`,
@@ -52,7 +52,7 @@ export default async function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   const date = post.published_at || post.created_at;
-  const coverImage = post.cover_image || '/images/header-real-saudi.jpg';
+  const coverImage = post.cover_image || '/images/header-real-saudi.webp';
 
   const articleJsonLd = {
     '@context': 'https://schema.org',

@@ -12,19 +12,19 @@ const HERO_SLIDES = [
     name: 'AlUla',
     location: 'Saudi Arabia',
     coords: '26.5° N, 37.9° E',
-    img: '/dest-alula.jpg'
+    img: '/dest-alula.webp'
   },
   {
     name: 'Maldives',
     location: 'Indian Ocean',
     coords: '4.2° N, 73.5° E',
-    img: '/dest-maldives.jpg'
+    img: '/dest-maldives.webp'
   },
   {
     name: 'Istanbul',
     location: 'Turkey',
     coords: '41.0° N, 28.9° E',
-    img: '/dest-istanbul.jpg'
+    img: '/dest-istanbul.webp'
   }
 ];
 
@@ -196,10 +196,10 @@ export default function Hero() {
         {/* Left Column (Top of zig-zag) */}
         <div ref={wordmarkLeftRef} className={styles.wordmarkLeft}>
           <div className={styles.logoMobileWrap}>
-            <img src="/logo.png" alt="يلا سفر" className={styles.logoMobile} />
+            <img src="/logo.webp" alt="يلا سفر" className={styles.logoMobile} />
           </div>
           <div ref={bgTextTopRef} className={`${styles.heroLogoWrap} ${styles.logoYallaWrap}`}>
-            <img src="/logo.png" alt="Yalla" className={`${styles.heroLogo} ${styles.logoYalla}`} />
+            <img src="/logo.webp" alt="Yalla" className={`${styles.heroLogo} ${styles.logoYalla}`} />
           </div>
           <span className={styles.eyebrowMini}>Bespoke Travel Agency</span>
           <h2 className={styles.taglineLine}>Journeys, Curated</h2>
@@ -285,7 +285,7 @@ export default function Hero() {
           <h2 className={styles.taglineLine}>Designed With Soul</h2>
           <span className={styles.estLabel}>EST. 2018</span>
           <div ref={bgTextBottomRef} className={`${styles.heroLogoWrap} ${styles.logoVoyageWrap}`}>
-            <img src="/logo.png" alt="Voyage" className={`${styles.heroLogo} ${styles.logoVoyage}`} />
+            <img src="/logo.webp" alt="Voyage" className={`${styles.heroLogo} ${styles.logoVoyage}`} />
           </div>
         </div>
       </div>

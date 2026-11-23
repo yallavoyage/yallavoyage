@@ -34,18 +34,24 @@
 
 @media (max-width: 1024px) {
   .card-swap-container {
-    transform: translate(-50%, -50%) scale(0.88);
+    transform: translate(-50%, -50%) scale(0.85);
   }
 }
 
 @media (max-width: 768px) {
   .card-swap-container {
-    transform: translate(-50%, -50%) scale(0.74);
+    transform: translate(calc(-50% - 30px), calc(-50% - 20px)) scale(0.68);
   }
 }
 
 @media (max-width: 480px) {
   .card-swap-container {
-    transform: translate(-50%, -50%) scale(0.62);
+    transform: translate(calc(-50% - 44px), calc(-50% - 30px)) scale(0.52);
+  }
+}
+
+@media (max-width: 380px) {
+  .card-swap-container {
+    transform: translate(calc(-50% - 40px), calc(-50% - 35px)) scale(0.48);
   }
 }

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: 'https://yallavoyage.com/blog',
     images: [
       {
-        url: '/images/header-real-saudi.jpg',
+        url: '/images/header-real-saudi.webp',
         width: 1200,
         height: 630,
         alt: 'Yalla Voyage Blog',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Yalla Voyage Travel Blog',
     description: 'Travel tips and destination guides from Saudi Arabia and beyond.',
-    images: ['/images/header-real-saudi.jpg'],
+    images: ['/images/header-real-saudi.webp'],
   },
 };
 

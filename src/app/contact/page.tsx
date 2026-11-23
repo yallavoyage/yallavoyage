@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Phone, MapPin, Mail, MessageCircle, Send, ArrowRight } from 'lucide-react';
+import { MessageCircle, Send, ArrowRight } from 'lucide-react';
+import { Flaticon } from '@/components/ui/Flaticon';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { siteConfig } from '@/data/site';
@@ -150,7 +151,7 @@ export default function ContactPage() {
       <PageHero
         title={c.heroTitle}
         subtitle={c.heroSubtitle}
-        image="/images/header-real-contact.jpg"
+        image="/images/header-real-contact.webp"
         alt="Bora Bora Turquoise Lagoon, French Polynesia"
         positionClass="object-center"
       />
@@ -187,8 +188,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-sm text-[#0F2E23]">{c.whatsappTitle}</p>
-                      <p className="text-[#0F2E23]/80 text-xs mt-0.5 font-mono" dir="ltr">+966 56 735 7250</p>
-                      <p className="text-[#0F2E23]/60 text-[11px] font-sans">{c.whatsappSub}</p>
+                      <p className="text-[#0F2E23]/60 text-xs mt-0.5 font-sans">{c.whatsappSub}</p>
                     </div>
                     <ArrowRight className={`w-4 h-4 text-[#2E6B57] group-hover:translate-x-1 transition-transform ${isRTL ? 'rotate-180' : ''}`} />
                   </a>
@@ -200,7 +200,7 @@ export default function ContactPage() {
                     className="flex items-center gap-4 p-4.5 rounded-2xl bg-white border border-[#0F2E23]/10 hover:border-[#2E6B57] hover:shadow-md transition-all duration-300 group"
                   >
                     <div className="w-11 h-11 rounded-xl bg-[#0F2E23] flex items-center justify-center flex-shrink-0 text-[#F4EFE6] shadow-xs">
-                      <Phone className="w-5 h-5" />
+                      <Flaticon name="customer-service" className="w-5 h-5 text-[#F4EFE6]" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-sm text-[#0F2E23]">{c.phoneTitle}</p>
@@ -216,7 +216,7 @@ export default function ContactPage() {
                     className="flex items-center gap-4 p-4.5 rounded-2xl bg-white border border-[#0F2E23]/10 hover:border-[#2E6B57] hover:shadow-md transition-all duration-300 group"
                   >
                     <div className="w-11 h-11 rounded-xl bg-[#0F2E23]/8 flex items-center justify-center flex-shrink-0 text-[#2E6B57]">
-                      <Mail className="w-5 h-5" />
+                      <Flaticon name="contact-mail" className="w-5 h-5 text-[#2E6B57]" />
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="font-semibold text-sm text-[#0F2E23]">{c.emailTitle}</p>
@@ -229,7 +229,7 @@ export default function ContactPage() {
                 <Reveal delay={0.25}>
                   <div className="flex items-start gap-4 p-4.5 rounded-2xl bg-white border border-[#0F2E23]/10">
                     <div className="w-11 h-11 rounded-xl bg-[#0F2E23]/8 flex items-center justify-center flex-shrink-0 text-[#2E6B57] mt-0.5">
-                      <MapPin className="w-5 h-5" />
+                      <Flaticon name="location" className="w-5 h-5 text-[#2E6B57]" />
                     </div>
                     <div>
                       <p className="font-semibold text-sm text-[#0F2E23]">{c.locationTitle}</p>

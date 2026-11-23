@@ -15,7 +15,7 @@ export interface PageHeroProps {
 export function PageHero({
   title,
   subtitle,
-  image = '/images/header-real-saudi.jpg',
+  image = '/images/header-real-saudi.webp',
   alt = 'يلا سفر Sanctuary',
   heightClass = 'min-h-[380px] sm:min-h-[440px] md:min-h-[480px] lg:min-h-[520px]',
   positionClass = 'object-center',
